@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ke8w0bqones7"]
+
+[ext_resource type="Script" uid="uid://pohh4j11nlc2" path="res://player.gd" id="1_xhfnw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xhfnw"]
+
+[node name="Player" type="RigidBody3D"]
+top_level = true
+lock_rotation = true
+linear_damp = 3.0
+script = ExtResource("1_xhfnw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0rwas")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_xhfnw")
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="PlayerCamera" type="Camera3D" parent="Neck"]
