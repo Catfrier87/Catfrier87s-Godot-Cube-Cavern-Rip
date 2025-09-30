@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://buwharmrjai70"]
+[gd_scene load_steps=10 format=3 uid="uid://buwharmrjai70"]
 
-[ext_resource type="PackedScene" uid="uid://ke8w0bqones7" path="res://Player.tscn" id="1_axi3y"]
-[ext_resource type="Texture2D" uid="uid://cxt1fawq0oaxv" path="res://icon.svg" id="1_kfraa"]
+[ext_resource type="PackedScene" uid="uid://ke8w0bqones7" path="res://player/Player.tscn" id="1_axi3y"]
+[ext_resource type="Texture2D" uid="uid://cxt1fawq0oaxv" path="res://gd.svg" id="1_kfraa"]
+[ext_resource type="Script" uid="uid://c2qbb5ueipeae" path="res://classes/dropped_item.gd" id="3_28q7j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o6uti"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,3 +51,7 @@ shape = SubResource("ConcavePolygonShape3D_axi3y")
 
 [node name="Player" parent="." instance=ExtResource("1_axi3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="DroppedItem" type="Node3D" parent="."]
+script = ExtResource("3_28q7j")
+metadata/_custom_type_script = "uid://c2qbb5ueipeae"
