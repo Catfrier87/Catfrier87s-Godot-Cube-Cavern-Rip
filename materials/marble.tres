@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bdjq1qmy2uwly"]
+
+[ext_resource type="Texture2D" uid="uid://df7uggmvi4adg" path="res://textures/tiles/lobbymarble.png" id="1_eky7d"]
+
+[resource]
+albedo_texture = ExtResource("1_eky7d")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0

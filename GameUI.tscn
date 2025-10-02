@@ -1,9 +1,221 @@
-[gd_scene format=3 uid="uid://onfq1pvwquk4"]
+[gd_scene load_steps=8 format=3 uid="uid://onfq1pvwquk4"]
 
-[node name="Control" type="Control"]
+[ext_resource type="FontFile" uid="uid://ktady0kvlsfw" path="res://fonts/SourceSansPro-Regular.ttf" id="1_4itvn"]
+[ext_resource type="Script" uid="uid://blpdqojtddbm5" path="res://gui_main.gd" id="1_qate7"]
+[ext_resource type="FontFile" uid="uid://btxgstic2k2eu" path="res://fonts/SourceSansPro-Italic.ttf" id="3_b7guu"]
+[ext_resource type="Texture2D" uid="uid://cllg4nkcefy6k" path="res://textures/gui/consumables/heart.png" id="4_gck35"]
+[ext_resource type="Texture2D" uid="uid://dqyc55y3q5eo8" path="res://textures/gui/consumables/coin.png" id="5_m61ox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4itvn"]
+bg_color = Color(0, 0, 0, 0.09803922)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qate7"]
+font = ExtResource("3_b7guu")
+shadow_size = 0
+
+[node name="GameUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qate7")
+
+[node name="HoverText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_right = 0.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_4itvn")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvn")
+text = "penis island"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+
+[node name="Consumables" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.725
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -10.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(40, 190)
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Health" type="ColorRect" parent="Consumables"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 0.09803922)
+
+[node name="TextureRect" type="TextureRect" parent="Consumables/Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gck35")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Consumables/Health"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 18)
+theme_override_fonts/font = ExtResource("1_4itvn")
+text = "5/5"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Ammo" type="ColorRect" parent="Consumables"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 0.09803922)
+
+[node name="TextureRect" type="TextureRect" parent="Consumables/Ammo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gck35")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Consumables/Ammo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 18)
+theme_override_fonts/font = ExtResource("1_4itvn")
+text = "999"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Coins" type="ColorRect" parent="Consumables"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 0.09803922)
+
+[node name="TextureRect" type="TextureRect" parent="Consumables/Coins"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_m61ox")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Consumables/Coins"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 18)
+theme_override_fonts/font = ExtResource("1_4itvn")
+text = "999"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Keys" type="ColorRect" parent="Consumables"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 0.09803922)
+
+[node name="TextureRect" type="TextureRect" parent="Consumables/Keys"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gck35")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Consumables/Keys"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 18)
+theme_override_fonts/font = ExtResource("1_4itvn")
+text = "999"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Menu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 23.0
+text = "Help me charlie"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0

@@ -1,22 +1,24 @@
-extends RigidBody3D
+extends CharacterBody3D
 
-#-- Player Stats
 
-@export var walkspeed = 1200 ## Per Second
+var speed = 10.0
+var jump_power = 4.5
 
-var move_direction := Vector3.ZERO
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta # TODO: Add disable gravity
 
-func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		$Neck.rotate_y(-deg_to_rad(event.relative.x * 0.4))
-		$Neck/PlayerCamera.rotate_x(-deg_to_rad(event.relative.y * 0.4))
-
-func _process(delta: float) -> void:
-	move_direction = Vector3.ZERO
-	move_direction.x = Input.get_axis("walk_left", "walk_right")
-	move_direction.z = Input.get_axis("walk_forward", "walk_backward")
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_power # TODO: CC Jump
 	
-	apply_central_force(move_direction * walkspeed * delta)
+	var input_dir = Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backward")
+	var direction = ($PlayerCamera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
+	
+	move_and_slide()

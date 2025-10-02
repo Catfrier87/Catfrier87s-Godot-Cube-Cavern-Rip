@@ -1,6 +1,6 @@
 @icon("res://classes/icons/droppeditem.png")
 class_name DroppedItem
-extends Node3D
+extends Interactable
 
 @export var linked_item: BaseItem
 @export var stack: int = 1
@@ -10,4 +10,7 @@ func collect(amount):
 	stack -= final
 	if stack <= 0:
 		free()
+	pass
+
+func interact(_player):
 	pass
