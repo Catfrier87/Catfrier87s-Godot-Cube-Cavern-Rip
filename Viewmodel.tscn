@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://v64k6q6e8kt6"]
+
+[ext_resource type="ArrayMesh" uid="uid://0e4w56im67lo" path="res://models/player/viewmodel/vmArm.obj" id="1_qtvdc"]
+
+[node name="Viewmodel" type="Node3D"]
+
+[node name="ArmRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675, -0.6, -1.175)
+mesh = ExtResource("1_qtvdc")
+
+[node name="ArmLeft" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675, -0.6, -1.175)
+mesh = ExtResource("1_qtvdc")

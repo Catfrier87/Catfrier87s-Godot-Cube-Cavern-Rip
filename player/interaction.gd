@@ -1,13 +1,20 @@
 extends RayCast3D
 
-
+@onready var hover_text = %GameUI.get_node("HoverText")
+var target: Node = null
 
 func _process(_delta: float):
 	#print(get_collider() == null)
-	var target = get_collider()
+	target = get_collider()
 	
-	%GameUI.get_node("HoverText").text = "I am trapped in your sewer, help me charlie"
+	hover_text.visible = false
 	
 	if target != null:
 		if "hover_text" in target:
-			print(target.hover_text)
+			hover_text.visible = true
+			hover_text.text = target.hover_text
+
+func _input(event):
+	if event.is_action_pressed("interact"):
+		if target.has_method("interact"):
+			target.interact(get_parent().get_parent())

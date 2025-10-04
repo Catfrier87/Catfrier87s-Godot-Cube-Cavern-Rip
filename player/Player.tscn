@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ke8w0bqones7"]
+[gd_scene load_steps=8 format=3 uid="uid://ke8w0bqones7"]
 
 [ext_resource type="Script" uid="uid://du8hse2ln7ro" path="res://player/player.gd" id="1_xhfnw"]
 [ext_resource type="Script" uid="uid://c7aifshkqvlks" path="res://player/camera_handler.gd" id="2_3c3w1"]
 [ext_resource type="Script" uid="uid://bqwy32wdtyefh" path="res://player/interaction.gd" id="3_wnvi2"]
 [ext_resource type="PackedScene" uid="uid://onfq1pvwquk4" path="res://GameUI.tscn" id="4_83hs8"]
+[ext_resource type="PackedScene" uid="uid://v64k6q6e8kt6" path="res://Viewmodel.tscn" id="5_x8kxw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
 height = 3.0
@@ -13,6 +14,8 @@ height = 3.0
 
 [node name="Player" type="CharacterBody3D"]
 top_level = true
+floor_constant_speed = true
+safe_margin = 1.1
 script = ExtResource("1_xhfnw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -35,5 +38,7 @@ script = ExtResource("3_wnvi2")
 
 [node name="GameUI" parent="PlayerCamera" instance=ExtResource("4_83hs8")]
 unique_name_in_owner = true
+
+[node name="Viewmodel" parent="PlayerCamera" instance=ExtResource("5_x8kxw")]
 
 [editable path="PlayerCamera/GameUI"]

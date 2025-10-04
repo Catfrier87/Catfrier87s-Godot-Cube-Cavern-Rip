@@ -1,7 +1,8 @@
 extends Camera3D
 
+@export var sensitivity = 0.01
+
 var camera_rotation = Vector3()
-var sensitivity = 0.01
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

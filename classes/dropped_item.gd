@@ -12,5 +12,5 @@ func collect(amount):
 		free()
 	pass
 
-func interact(_player):
-	pass
+func interact(player):
+	print(player)
