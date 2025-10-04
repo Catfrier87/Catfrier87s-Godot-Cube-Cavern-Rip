@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-var speed = 10.0
+var speed = 15.0
 var jump_power = 4.5
 
 func _physics_process(delta: float) -> void:

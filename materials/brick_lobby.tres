@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dfj2xr44gdfx8"]
+
+[ext_resource type="Texture2D" uid="uid://cqb37w3561h3u" path="res://textures/tiles/goldbrick.png" id="1_3mjg7"]
+
+[resource]
+albedo_texture = ExtResource("1_3mjg7")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0

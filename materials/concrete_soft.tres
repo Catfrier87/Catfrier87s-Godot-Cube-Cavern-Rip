@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://jbqa1hu2s5wg"]
+
+[ext_resource type="Texture2D" uid="uid://clqgxkcwmksxg" path="res://textures/tiles/Lightconcrete.png" id="1_wha15"]
+
+[resource]
+albedo_color = Color(0.99048716, 0.83441633, 0.5198847, 1)
+albedo_texture = ExtResource("1_wha15")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0
