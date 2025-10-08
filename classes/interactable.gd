@@ -1,4 +1,5 @@
 @abstract
+@icon("res://classes/icons/interactable.png")
 class_name Interactable
 extends StaticBody3D
 

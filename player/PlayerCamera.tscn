@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx76n0347uda4"]
+
+[ext_resource type="Script" uid="uid://c7aifshkqvlks" path="res://player/camera_handler.gd" id="1_vufne"]
+[ext_resource type="PackedScene" uid="uid://v64k6q6e8kt6" path="res://player/Viewmodel.tscn" id="2_f3pjq"]
+[ext_resource type="PackedScene" uid="uid://onfq1pvwquk4" path="res://gui/GameUI.tscn" id="3_cu1rf"]
+[ext_resource type="Script" uid="uid://bqwy32wdtyefh" path="res://player/interaction.gd" id="3_ykl46"]
+
+[node name="PlayerCamera" type="Camera3D"]
+script = ExtResource("1_vufne")
+
+[node name="Viewmodel" parent="." instance=ExtResource("2_f3pjq")]
+
+[node name="InteractRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -4)
+script = ExtResource("3_ykl46")
+
+[node name="GameUI" parent="." instance=ExtResource("3_cu1rf")]
+unique_name_in_owner = true
+
+[editable path="GameUI"]

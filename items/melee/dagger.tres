@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=2 format=3 uid="uid://dp6d5ac5wg4wh"]
+
+[ext_resource type="Script" uid="uid://conosxusnfkf7" path="res://classes/resources/items/bases/melee_weapon.gd" id="1_a04or"]
+
+[resource]
+script = ExtResource("1_a04or")
+identifier = "Dagger"
+item_name = "dagger"
+image = "res://textures/item/melee/dagger.png"
+model = "res://textures/item/melee/dagger.png"
+metadata/_custom_type_script = "uid://conosxusnfkf7"

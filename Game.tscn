@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://buwharmrjai70"]
+[gd_scene load_steps=8 format=3 uid="uid://buwharmrjai70"]
 
-[ext_resource type="PackedScene" uid="uid://ke8w0bqones7" path="res://player/Player.tscn" id="1_sb48q"]
-[ext_resource type="Script" uid="uid://c2qbb5ueipeae" path="res://classes/dropped_item.gd" id="2_t88pq"]
-[ext_resource type="ArrayMesh" uid="uid://dm7ry1kyuh54w" path="res://models/items/dagger.obj" id="3_r0x5m"]
-[ext_resource type="PackedScene" uid="uid://s4kyrylskr3v" path="res://Rooms/Lobby.tscn" id="4_sb48q"]
+[ext_resource type="Script" uid="uid://q113sx63n7ob" path="res://test.gd" id="1_sb48q"]
+[ext_resource type="PackedScene" uid="uid://s4kyrylskr3v" path="res://rooms/Lobby.tscn" id="4_sb48q"]
+[ext_resource type="ArrayMesh" uid="uid://dnntyeupr0p64" path="res://models/dummy.obj" id="5_r0x5m"]
+[ext_resource type="PackedScene" uid="uid://cgasw2hlkwtpm" path="res://player/Player.tscn" id="5_t88pq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o6uti"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,9 +18,8 @@ sky = SubResource("Sky_sb48q")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1x61k"]
-
 [node name="Game" type="Node3D"]
+script = ExtResource("1_sb48q")
 
 [node name="Environment" type="Node" parent="."]
 
@@ -33,19 +32,11 @@ light_color = Color(0.49019608, 0.49019608, 0.49019608, 1)
 light_energy = 0.0
 directional_shadow_mode = 0
 
-[node name="Player" parent="." instance=ExtResource("1_sb48q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
-
-[node name="DroppedItem" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 3.065405)
-script = ExtResource("2_t88pq")
-metadata/_custom_type_script = "uid://c2qbb5ueipeae"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DroppedItem"]
-shape = SubResource("BoxShape3D_1x61k")
-
-[node name="Model" type="MeshInstance3D" parent="DroppedItem"]
-mesh = ExtResource("3_r0x5m")
-skeleton = NodePath("../..")
+[node name="Player" parent="." instance=ExtResource("5_t88pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
 
 [node name="Lobby" parent="." instance=ExtResource("4_sb48q")]
+
+[node name="Dummy" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1835337, 8.55001, 2.6966958)
+mesh = ExtResource("5_r0x5m")

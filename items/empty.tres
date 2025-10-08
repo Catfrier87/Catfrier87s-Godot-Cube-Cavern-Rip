@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=2 format=3 uid="uid://bqtvqk1bwexov"]
+
+[ext_resource type="Script" uid="uid://conosxusnfkf7" path="res://classes/resources/items/bases/melee_weapon.gd" id="1_k3x1g"]
+
+[resource]
+script = ExtResource("1_k3x1g")
+damage = 1.0
+identifier = "Empty"
+item_name = ""
+item_description = "If you're seeing this, something went SERIOUSLY wrong."
+image = "null"
+model = "null"
+metadata/_custom_type_script = "uid://conosxusnfkf7"

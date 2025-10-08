@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://ke8w0bqones7"]
+
+[ext_resource type="Script" uid="uid://du8hse2ln7ro" path="res://player/player.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://c7aifshkqvlks" path="res://player/camera_handler.gd" id="2_3c3w1"]
+[ext_resource type="Script" uid="uid://khyb80og1whj" path="res://player/hip_ray.gd" id="2_aqcbf"]
+[ext_resource type="Script" uid="uid://bqwy32wdtyefh" path="res://player/interaction.gd" id="3_wnvi2"]
+[ext_resource type="PackedScene" uid="uid://onfq1pvwquk4" path="res://gui/GameUI.tscn" id="4_83hs8"]
+[ext_resource type="PackedScene" uid="uid://v64k6q6e8kt6" path="res://Viewmodel.tscn" id="5_x8kxw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_x8kxw"]
+height = 0.001
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xhfnw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x8kxw"]
+height = 1.0
+
+[node name="Player" type="RigidBody3D"]
+top_level = true
+lock_rotation = true
+script = ExtResource("1_xhfnw")
+
+[node name="HipRay" type="ShapeCast3D" parent="." node_paths=PackedStringArray("character")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("CylinderShape3D_x8kxw")
+target_position = Vector3(0, -1.1, 0)
+max_results = 1
+script = ExtResource("2_aqcbf")
+character = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0rwas")
+
+[node name="DebugVisual" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_xhfnw")
+
+[node name="DebugVisual" type="MeshInstance3D" parent="DebugVisual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+mesh = SubResource("CapsuleMesh_x8kxw")
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+current = true
+fov = 90.0
+script = ExtResource("2_3c3w1")
+
+[node name="InteractRay" type="RayCast3D" parent="PlayerCamera"]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -3)
+script = ExtResource("3_wnvi2")
+
+[node name="GameUI" parent="PlayerCamera" instance=ExtResource("4_83hs8")]
+unique_name_in_owner = true
+
+[node name="Viewmodel" parent="PlayerCamera" instance=ExtResource("5_x8kxw")]
+
+[editable path="PlayerCamera/GameUI"]

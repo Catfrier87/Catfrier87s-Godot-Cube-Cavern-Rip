@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://c51fgpxxu72l1"]
+
+[ext_resource type="Texture2D" uid="uid://dw0ds6526j1g2" path="res://textures/tiles/placeholder.png" id="1_pmr36"]
+[ext_resource type="Script" uid="uid://bltsdiqf1jmdt" path="res://gui/hotbar_slot.gd" id="1_v3mij"]
+[ext_resource type="FontFile" uid="uid://d3p3mkclj7la1" path="res://fonts/SourceSansPro-Bold.ttf" id="2_v3mij"]
+[ext_resource type="FontFile" uid="uid://btxgstic2k2eu" path="res://fonts/SourceSansPro-Italic.ttf" id="3_ngbif"]
+
+[node name="Slot" type="ColorRect"]
+custom_minimum_size = Vector2(44, 44)
+size_flags_vertical = 8
+color = Color(0, 0, 0, 0.101960786)
+script = ExtResource("1_v3mij")
+
+[node name="FillBar" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1
+anchor_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0.8)
+
+[node name="ItemImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pmr36")
+expand_mode = 1
+
+[node name="ItemName" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.1
+anchor_right = 0.5
+anchor_bottom = -0.1
+offset_left = -52.0
+offset_top = -23.0
+offset_right = 52.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.33333334, 0.6666667, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.49803922)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_v3mij")
+theme_override_font_sizes/font_size = 18
+text = "Lorem Ipsum"
+horizontal_alignment = 1
+
+[node name="SlotNumber" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.101960786)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_ngbif")
+theme_override_font_sizes/font_size = 18
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Stack" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.39215687)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.101960786)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_ngbif")
+theme_override_font_sizes/font_size = 18
+text = "x999"
+horizontal_alignment = 2

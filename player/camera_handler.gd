@@ -5,6 +5,7 @@ extends Camera3D
 var camera_rotation = Vector3()
 
 func _ready():
+	await GameVariables.player_loaded
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event):

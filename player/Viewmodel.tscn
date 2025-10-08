@@ -4,6 +4,8 @@
 
 [node name="Viewmodel" type="Node3D"]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [node name="ArmRight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675, -0.6, -1.175)
 mesh = ExtResource("1_qtvdc")

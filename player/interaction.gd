@@ -1,5 +1,7 @@
 extends RayCast3D
 
+#TODO: Make accurate to original interaction range
+
 @onready var hover_text = %GameUI.get_node("HoverText")
 var target: Node = null
 
@@ -16,5 +18,6 @@ func _process(_delta: float):
 
 func _input(event):
 	if event.is_action_pressed("interact"):
-		if target.has_method("interact"):
-			target.interact(get_parent().get_parent())
+		if target != null:
+			if target.has_method("interact"):
+				target.interact(get_parent().get_parent())

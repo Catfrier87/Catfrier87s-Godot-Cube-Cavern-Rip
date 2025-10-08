@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RangedWeapon" load_steps=2 format=3 uid="uid://curqtqhoioikk"]
+
+[ext_resource type="Script" uid="uid://b66c1840406v7" path="res://classes/resources/items/bases/ranged_weapon.gd" id="1_jakxl"]
+
+[resource]
+script = ExtResource("1_jakxl")
+identifier = "GenericGun"
+item_name = "Help Me Charlie"
+image = "res://textures/item/ranged/gun_blue.png"
+metadata/_custom_type_script = "uid://b66c1840406v7"
