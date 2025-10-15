@@ -23,7 +23,7 @@ func display_item(item: Item):
 		$ItemImage.texture = load(item.image)
 	
 	if item.amount > 1:
-		$Stack.text = item.amount
+		$Stack.text = str("x",item.amount)
 		$Stack.visible = true
 	else:
 		$Stack.visible = false

@@ -116,7 +116,7 @@ func _physics_process(delta: float) -> void:
 	# Walking
 	
 	var input_dir = Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backward")
-	var direction = ($PlayerCamera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = ($Camera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction != Vector3.ZERO:
 		linear_velocity.x = direction.x * speed
@@ -130,3 +130,10 @@ func _input(event: InputEvent) -> void:
 		change_slot(1)
 	if Input.is_action_just_released("previous_slot"):
 		change_slot(-1)
+	
+	if event.is_action_pressed("item_primary"):
+		if inventory[selected_slot].has_method("use_primary"):
+			inventory[selected_slot].use_primary(self)
+	elif event.is_action_pressed("item_secondary"):
+		if inventory[selected_slot].has_method("use_secondary"):
+			inventory[selected_slot].use_secondary(self)

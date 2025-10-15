@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://onfq1pvwquk4"]
+[gd_scene load_steps=12 format=3 uid="uid://onfq1pvwquk4"]
 
 [ext_resource type="Script" uid="uid://blpdqojtddbm5" path="res://gui/gui_main.gd" id="1_ox3t3"]
 [ext_resource type="FontFile" uid="uid://ktady0kvlsfw" path="res://fonts/SourceSansPro-Regular.ttf" id="2_hbged"]
 [ext_resource type="FontFile" uid="uid://btxgstic2k2eu" path="res://fonts/SourceSansPro-Italic.ttf" id="3_5h726"]
 [ext_resource type="Texture2D" uid="uid://cllg4nkcefy6k" path="res://textures/gui/consumables/heart.png" id="4_65msg"]
+[ext_resource type="Script" uid="uid://bgyg6xek1we3t" path="res://gui/gui_consumables.gd" id="4_ox3t3"]
 [ext_resource type="Texture2D" uid="uid://k3dldyl7kc0h" path="res://textures/gui/consumables/ammo.png" id="5_00nbj"]
 [ext_resource type="Texture2D" uid="uid://dqyc55y3q5eo8" path="res://textures/gui/consumables/coin.png" id="6_otise"]
 [ext_resource type="Texture2D" uid="uid://bio0ty8pkjv08" path="res://textures/gui/consumables/keys.png" id="7_2d2qh"]
@@ -59,6 +60,7 @@ grow_vertical = 2
 pivot_offset = Vector2(40, 190)
 theme_override_constants/separation = 10
 alignment = 2
+script = ExtResource("4_ox3t3")
 
 [node name="Health" type="ColorRect" parent="Consumables"]
 custom_minimum_size = Vector2(40, 40)

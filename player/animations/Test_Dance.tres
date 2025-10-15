@@ -1,0 +1,20 @@
+[gd_resource type="Animation" format=3 uid="uid://chni4gfitj5pn"]
+
+[resource]
+resource_name = "Dance"
+length = 0.31666666
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:ArmLeftBone")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.5735765, 0, 0, 0.819152, 0.033333335, 1, 0.6025119, 0, 0, 0.79810995, 0.06666667, 1, 0.66929007, 0, 0, 0.7430013, 0.1, 1, 0.74300146, 0, 0, 0.6692899, 0.13333334, 1, 0.79811, 0, 0, 0.6025118, 0.16666667, 1, 0.8191522, 0, 0, 0.57357633, 0.2, 1, 0.7941995, 0, 0, 0.6076571, 0.23333333, 1, 0.7303065, 0, 0, 0.6831197, 0.26666668, 1, 0.6502926, 0, 0, 0.7596839, 0.3, 1, 0.5906929, 0, 0, 0.80689645, 0.31666666, 1, 0.5814077, 0, 0, 0.8136124)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:ArmRightBone")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.8191521, 0, 0, 0.5735764, 0.033333335, 1, 0.79811, 0, 0, 0.60251176, 0.06666667, 1, 0.74300146, 0, 0, 0.6692899, 0.1, 1, 0.66929007, 0, 0, 0.7430013, 0.13333334, 1, 0.6025119, 0, 0, 0.79810995, 0.16666667, 1, 0.5735764, 0, 0, 0.81915206, 0.2, 1, 0.60765713, 0, 0, 0.79419947, 0.23333333, 1, 0.6831199, 0, 0, 0.7303063, 0.26666668, 1, 0.75968397, 0, 0, 0.65029246, 0.3, 1, 0.80689657, 0, 0, 0.5906928, 0.31666666, 1, 0.81361246, 0, 0, 0.5814076)

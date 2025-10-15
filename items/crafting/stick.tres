@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=2 format=3 uid="uid://yeseqhykgc4b"]
+
+[ext_resource type="Script" uid="uid://conosxusnfkf7" path="res://classes/resources/items/bases/melee_weapon.gd" id="1_p4r04"]
+
+[resource]
+script = ExtResource("1_p4r04")
+stack = 10
+item_name = "Stick"
+item_description = "Help me Charlie"
+image = "res://textures/item/materials/stick.png"
+metadata/_custom_type_script = "uid://conosxusnfkf7"
