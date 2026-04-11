@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bus2ew2scxkjq"
+path="res://.godot/imported/CC collect 1.mp3-4f959593e21ec24fa2886a7d3824140a.mp3str"
+
+[deps]
+
+source_file="res://soundeffects/interactable/CC collect 1.mp3"
+dest_files=["res://.godot/imported/CC collect 1.mp3-4f959593e21ec24fa2886a7d3824140a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

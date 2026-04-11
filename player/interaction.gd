@@ -2,7 +2,7 @@ extends RayCast3D
 
 #TODO: Make accurate to original interaction range
 
-@onready var hover_text = %GameUI.get_node("HoverText")
+@onready var hover_text = %UIMain.get_node("HoverText")
 var target: Node = null
 
 func _process(_delta: float):

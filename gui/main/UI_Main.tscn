@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://ds5kdyt62oyph"]
+
+[ext_resource type="FontFile" uid="uid://rvq48osupr4x" path="res://gui/fonts/SourceSansPro-Regular.ttf" id="2_arnh4"]
+[ext_resource type="FontFile" uid="uid://csbaxda8d1b76" path="res://gui/fonts/SourceSansPro-Italic.ttf" id="3_pvg3h"]
+[ext_resource type="Texture2D" uid="uid://c3v4qphteclqa" path="res://gui/main/consumables/heart.png" id="4_5q8ln"]
+[ext_resource type="Texture2D" uid="uid://bu2oi2n0jjt7n" path="res://gui/main/consumables/ammo.png" id="5_tulne"]
+[ext_resource type="Texture2D" uid="uid://bisy31ymtmgjb" path="res://gui/main/consumables/coin.png" id="6_je637"]
+[ext_resource type="Texture2D" uid="uid://cn2jnb853i6q1" path="res://gui/main/consumables/keys.png" id="7_dqrvo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4itvn"]
+bg_color = Color(0, 0, 0, 0.09803922)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qate7"]
+font = ExtResource("3_pvg3h")
+shadow_size = 0
+
+[node name="GameUI" type="Control" unique_id=804144097]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HoverText" type="Label" parent="." unique_id=1823783961]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_right = 0.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_arnh4")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvn")
+text = "Lorem Ipsum."
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+
+[node name="Consumables" type="VBoxContainer" parent="." unique_id=804736808]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.725
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -10.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(40, 190)
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Health" type="ColorRect" parent="Consumables" unique_id=570747552]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 0.09803922)
+
+[node name="TextureRect" type="TextureRect" parent="Consumables/Health" unique_id=984377127]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5q8ln")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Consumables/Health" unique_id=570749805]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 18)
+theme_override_fonts/font = ExtResource("2_arnh4")
+text = "5/5"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Ammo" type="ColorRect" parent="Consumables" unique_id=1958710722]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 0.09803922)
+
+[node name="TextureRect" type="TextureRect" parent="Consumables/Ammo" unique_id=1878364289]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_tulne")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Consumables/Ammo" unique_id=1891534990]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 18)
+theme_override_fonts/font = ExtResource("2_arnh4")
+text = "999"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Coins" type="ColorRect" parent="Consumables" unique_id=2045087076]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 0.09803922)
+
+[node name="TextureRect" type="TextureRect" parent="Consumables/Coins" unique_id=566657996]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_je637")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Consumables/Coins" unique_id=1362475607]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 18)
+theme_override_fonts/font = ExtResource("2_arnh4")
+text = "999"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Keys" type="ColorRect" parent="Consumables" unique_id=1137727166]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 0.09803922)
+
+[node name="TextureRect" type="TextureRect" parent="Consumables/Keys" unique_id=1439707412]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_dqrvo")
+expand_mode = 1
+
+[node name="Amount" type="Label" parent="Consumables/Keys" unique_id=30713371]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 18)
+theme_override_fonts/font = ExtResource("2_arnh4")
+text = "999"
+label_settings = SubResource("LabelSettings_qate7")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Menu" type="Panel" parent="." unique_id=308242003]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=564805350]
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 23.0
+text = "Help me charlie"
+
+[node name="Hotbar" type="HBoxContainer" parent="." unique_id=625449946]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -100.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 16
+alignment = 2

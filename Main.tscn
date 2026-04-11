@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cepw1g6ijdabo"]
+
+[ext_resource type="Script" uid="uid://bt6rq8hounmey" path="res://_test_script.gd" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://s4kyrylskr3v" path="res://maps/lobby/Lobby.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://qkvknpfwnhy7" path="res://player/Player.tscn" id="3_r0du0"]
+
+[node name="Game" type="Node3D" unique_id=400749066]
+script = ExtResource("1_glv2v")
+
+[node name="Lobby" parent="." unique_id=777086375 instance=ExtResource("2_uu6xs")]
+
+[node name="Player" parent="." unique_id=2071701041 instance=ExtResource("3_r0du0")]
+
+[node name="Body" parent="Player" index="0" unique_id=1624144700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[editable path="Player"]
