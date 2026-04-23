@@ -1,14 +1,22 @@
 [gd_scene format=3 uid="uid://qkvknpfwnhy7"]
 
-[ext_resource type="Script" uid="uid://dvw53tiejha47" path="res://entities/base_entity.gd" id="1_3c3w1"]
+[ext_resource type="Script" uid="uid://dsjq6kps2s7a1" path="res://player/player_entity.gd" id="1_83hs8"]
 [ext_resource type="PackedScene" uid="uid://dx76n0347uda4" path="res://player/PlayerCamera.tscn" id="2_3c3w1"]
+[ext_resource type="Script" uid="uid://bujs25wn1g2au" path="res://entities/components/inventory.gd" id="2_83hs8"]
 [ext_resource type="Script" uid="uid://qh2irvsl5ji7" path="res://player/character_controller.gd" id="2_wnvi2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
+height = 3.1
 
-[node name="Player" type="Node" unique_id=141645438]
-script = ExtResource("1_3c3w1")
-metadata/_custom_type_script = "uid://dvw53tiejha47"
+[node name="Player" type="Node" unique_id=2049562292 node_paths=PackedStringArray("camera", "controller")]
+script = ExtResource("1_83hs8")
+camera = NodePath("Body/PlayerCamera")
+controller = NodePath("Body")
+metadata/_custom_type_script = "uid://dsjq6kps2s7a1"
+
+[node name="Inventory" type="Node" parent="." unique_id=2142107890]
+script = ExtResource("2_83hs8")
+metadata/_custom_type_script = "uid://bujs25wn1g2au"
 
 [node name="Body" type="CharacterBody3D" parent="." unique_id=1624144700]
 script = ExtResource("2_wnvi2")
@@ -18,5 +26,5 @@ shape = SubResource("CapsuleShape3D_oul6g")
 
 [node name="PlayerCamera" parent="Body" unique_id=700266717 instance=ExtResource("2_3c3w1")]
 unique_name_in_owner = true
-transform = Transform3D(1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 1, 0)
 current = true

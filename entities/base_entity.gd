@@ -1,7 +1,7 @@
 extends Node
 class_name Entity
 
-#- Health
+#--- Health
 
 @export var health: float = 1
 @export var max_health: float = 1
@@ -16,7 +16,7 @@ func mod_health(amount: float) -> float:
 	
 	return diff
 
-#- Modifiers
+#--- Modifiers
 
 var property_mods: Dictionary = {} # Each key is the same as a property, stores (Did I deadass forget to finish this comment?)
 var modifiers: Dictionary = {} # Each key is a modifier that handles multiple properties

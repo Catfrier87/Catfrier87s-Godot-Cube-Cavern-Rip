@@ -15,9 +15,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = REPLACE_Jumpvel
 		
 	var input_dir = Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backward")
-	#var fuck_my_life = Transform3D().looking_at(Vector3(input_dir.x, 0, input_dir.y))
-	#fuck_my_life.basis.y = %PlayerCamera.transform.basis.y # alt: fuck_my_life.rotated(vector3(0,1,0))
-	
 	var gorefuck = Basis.from_euler(Vector3(0,-%PlayerCamera.camera_rotation.x,0))
 	
 	var direction = (gorefuck * Vector3(input_dir.x, 0, input_dir.y)).normalized() #(penis_lol * Vector3(input_dir.x, 0, input_dir.y)).normalized()
