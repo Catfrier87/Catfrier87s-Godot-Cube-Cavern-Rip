@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c7aifshkqvlks" path="res://player/camera_handler.gd" id="1_itl3e"]
 [ext_resource type="PackedScene" uid="uid://cvjxg2vq434h2" path="res://player/viewmodel/Viewmodel.tscn" id="2_lpc42"]
 [ext_resource type="Script" uid="uid://bqwy32wdtyefh" path="res://player/interaction.gd" id="3_cu1rf"]
-[ext_resource type="PackedScene" uid="uid://cqa4qmeto4kry" path="res://gui/main/ui_main.tscn" id="4_ykl46"]
+[ext_resource type="PackedScene" uid="uid://ds5kdyt62oyph" path="res://gui/main/ui_main.tscn" id="4_ykl46"]
 
 [node name="PlayerCamera" type="Camera3D" unique_id=700266717]
 script = ExtResource("1_itl3e")

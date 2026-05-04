@@ -1,16 +1,21 @@
 extends Node
 class_name Inventory
 
-@export var max_slots: int = 10
-
+@export var max_slots: int = 8
 @export var slot: Dictionary = {} # Supposed to be accessed like Inventory.Slot[1]
+
+#- Signals
+
+signal updated_slot
+
+#- Functions
 
 func check_available_slots_for(item: Item):
 	var amount = 0
 	for slot_key in slot:
 		if slot.info.identifier == item.info.identifier:
 			amount += slot.stack - slot.amount
-		elif slot.info.identifier == "Empty":
+		elif slot.info.identifier == "Empty": #replace this with null and shit
 			amount += item.info.stack
 	
 	return amount

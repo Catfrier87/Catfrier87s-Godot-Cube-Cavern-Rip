@@ -28,3 +28,9 @@ shape = SubResource("CapsuleShape3D_oul6g")
 unique_name_in_owner = true
 transform = Transform3D(1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 1, 0)
 current = true
+
+[node name="Hotbar" parent="Body/PlayerCamera/UIMain" parent_id_path=PackedInt32Array(700266717, 1197083834) index="4" unique_id=625449946 node_paths=PackedStringArray("linked_inventory")]
+linked_inventory = NodePath("../../../../Inventory")
+
+[editable path="Body/PlayerCamera"]
+[editable path="Body/PlayerCamera/UIMain"]

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3v4qphteclqa" path="res://gui/main/consumables/heart.png" id="4_5q8ln"]
 [ext_resource type="Texture2D" uid="uid://bu2oi2n0jjt7n" path="res://gui/main/consumables/ammo.png" id="5_tulne"]
 [ext_resource type="Texture2D" uid="uid://bisy31ymtmgjb" path="res://gui/main/consumables/coin.png" id="6_je637"]
+[ext_resource type="Script" uid="uid://duxemhtw8kxtm" path="res://gui/main/hotbar/hotbar.gd" id="7_5j6jj"]
 [ext_resource type="Texture2D" uid="uid://cn2jnb853i6q1" path="res://gui/main/consumables/keys.png" id="7_dqrvo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4itvn"]
@@ -222,3 +223,4 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 16
 alignment = 2
+script = ExtResource("7_5j6jj")

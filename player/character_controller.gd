@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("walk_left", "walk_right", "walk_forward", "walk_backward")
 	var gorefuck = Basis.from_euler(Vector3(0,-%PlayerCamera.camera_rotation.x,0))
 	
-	var direction = (gorefuck * Vector3(input_dir.x, 0, input_dir.y)).normalized() #(penis_lol * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (gorefuck * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * walkspeed
 		velocity.z = direction.z * walkspeed

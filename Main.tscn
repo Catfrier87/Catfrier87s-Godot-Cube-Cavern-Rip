@@ -11,7 +11,8 @@ script = ExtResource("1_glv2v")
 
 [node name="Player" parent="." unique_id=2071701041 instance=ExtResource("3_r0du0")]
 
-[node name="Body" parent="Player" index="0" unique_id=1624144700]
+[node name="Body" parent="Player" index="1" unique_id=1624144700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
 [editable path="Player"]
+[editable path="Player/Body/PlayerCamera"]

@@ -18,6 +18,7 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
 [sub_resource type="Sky" id="Sky_axi3y"]
 sky_material = SubResource("ProceduralSkyMaterial_4tt3f")
+radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_w8fp3"]
 background_mode = 2
@@ -315,7 +316,6 @@ environment = SubResource("Environment_w8fp3")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=17045674]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 light_color = Color(0.49019608, 0.49019608, 0.49019608, 1)
-light_energy = 0.0
 directional_shadow_mode = 0
 
 [node name="Lighting" type="Node" parent="." unique_id=1978358160]
