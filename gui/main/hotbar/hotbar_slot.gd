@@ -15,12 +15,13 @@ func deselect():
 
 func display_item(item: Item):
 	
-	$ItemName.text = item.info.item_name
-	
-	if item.info.image == "null":
+	$ItemName.text = item.item_name
+	print(item.item_name)
+	print('"'+item.image+'"')
+	if item.image == "":
 		$ItemImage.texture = null
 	else:
-		$ItemImage.texture = load(item.info.image)
+		$ItemImage.texture = load(item.image)
 	
 	if item.stack > 1:
 		$Stack.text = str("x",item.stack)

@@ -8,10 +8,11 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
 height = 3.1
 
-[node name="Player" type="Node" unique_id=2049562292 node_paths=PackedStringArray("camera", "controller")]
+[node name="Player" type="Node" unique_id=2049562292 node_paths=PackedStringArray("camera", "controller", "inventory")]
 script = ExtResource("1_83hs8")
 camera = NodePath("Body/PlayerCamera")
 controller = NodePath("Body")
+inventory = NodePath("Inventory")
 metadata/_custom_type_script = "uid://dsjq6kps2s7a1"
 
 [node name="Inventory" type="Node" parent="." unique_id=2142107890]
@@ -28,6 +29,9 @@ shape = SubResource("CapsuleShape3D_oul6g")
 unique_name_in_owner = true
 transform = Transform3D(1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 1, 0)
 current = true
+
+[node name="InteractRay" parent="Body/PlayerCamera" index="1" unique_id=232759846]
+target_position = Vector3(0, 0, -3)
 
 [node name="Hotbar" parent="Body/PlayerCamera/UIMain" parent_id_path=PackedInt32Array(700266717, 1197083834) index="4" unique_id=625449946 node_paths=PackedStringArray("linked_inventory")]
 linked_inventory = NodePath("../../../../Inventory")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Melee" format=3 uid="uid://c1hb8dpbrnqm4"]
+
+[ext_resource type="Script" uid="uid://j6n7d22dcd4b" path="res://base_items/melee/base_melee.gd" id="1_olltq"]
+
+[resource]
+script = ExtResource("1_olltq")
+damage = 1.0
+identifier = "fists"
+item_name = "empty"
+item_description = "You are really not spposed to be seeing this"
+image = ""
+model = ""
+metadata/_custom_type_script = "uid://j6n7d22dcd4b"

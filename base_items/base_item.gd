@@ -1,11 +1,11 @@
-extends Object
+extends Resource
 class_name Item
 
 #- Functional
 @export var identifier: String = "LoremIpsum"
 @export var stack: int = 1 ## Stack size limit.
 @export var amount: int = 1 ## The amount of items currently in the stack.
-@export var active: Dictionary = {} ## It hurts.
+#@export var active: Dictionary = {} ## It hurts.
 
 var property_mods: Dictionary = {} # Each key is the same as a property, stores (Did I deadass forget to finish this comment?)
 var modifiers: Dictionary = {} # Each key is a modifier that handles multiple properties
@@ -13,7 +13,7 @@ var modifiers: Dictionary = {} # Each key is a modifier that handles multiple pr
 #- Visual
 @export var item_name: String = "Lorem Ipsum"
 @export var item_description: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-@export var image: String = "res://gd.svg" ## res:// Path
+@export var image: String = "res://placeholder.png" ## res:// Path
 @export var model: String = "res://placeholder" ## res:// Path
 
 ## Allows access to property_mods without worrying about having to create a PropertyMod first

@@ -2,7 +2,11 @@ extends Node
 class_name Inventory
 
 @export var max_slots: int = 8
-@export var slot: Dictionary = {} # Supposed to be accessed like Inventory.Slot[1]
+@export var slot: Dictionary = {
+	1: load("res://items/weapons/fists.tres"), #Melee.new(), #Fucckkk
+} # Supposed to be accessed like Inventory.Slot[1]
+
+var default = preload("res://items/weapons/fists.tres")
 
 #- Signals
 
