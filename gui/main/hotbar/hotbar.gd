@@ -25,11 +25,9 @@ func clean():
 
 func _ready() -> void:
 	if linked_inventory != null:
-		print("setting up inventory")
 		setup(linked_inventory.max_slots)
 		display_inventory(linked_inventory.slot)
 		linked_inventory.updated_slot.connect(func(slot_id, item):
-			print(slot_id, item)
 			get_child(slot_id).display_item(item)
 			pass
 		)

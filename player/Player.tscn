@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://qkvknpfwnhy7"]
 
-[ext_resource type="Script" uid="uid://dsjq6kps2s7a1" path="res://player/player_entity.gd" id="1_83hs8"]
+[ext_resource type="Script" uid="uid://cwr4u5nm1risp" path="res://player/scripts/player_main.gd" id="1_83hs8"]
 [ext_resource type="PackedScene" uid="uid://dx76n0347uda4" path="res://player/PlayerCamera.tscn" id="2_3c3w1"]
 [ext_resource type="Script" uid="uid://bujs25wn1g2au" path="res://entities/components/inventory.gd" id="2_83hs8"]
-[ext_resource type="Script" uid="uid://qh2irvsl5ji7" path="res://player/character_controller.gd" id="2_wnvi2"]
+[ext_resource type="Script" uid="uid://qh2irvsl5ji7" path="res://player/scripts/character_controller.gd" id="2_wnvi2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
 height = 3.1

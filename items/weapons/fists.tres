@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Melee" format=3 uid="uid://c1hb8dpbrnqm4"]
 
-[ext_resource type="Script" uid="uid://j6n7d22dcd4b" path="res://base_items/melee/base_melee.gd" id="1_olltq"]
+[ext_resource type="Script" uid="uid://j6n7d22dcd4b" path="res://classes/base_items/melee/base_melee.gd" id="1_olltq"]
 
 [resource]
 script = ExtResource("1_olltq")

@@ -7,6 +7,14 @@ class_name Player
 @export_group("Inventory")
 
 @export var inventory: Inventory
+@export var selected_slot: int = 1: set = _set_selected_slot
+
+signal changed_slot
+
+func _set_selected_slot(value):
+	var _last_slot = selected_slot
+	selected_slot = value % inventory.max_slots
+	changed_slot.emit(selected_slot, _last_slot)
 
 @export_subgroup("Consumables")
 
@@ -19,8 +27,10 @@ class_name Player
 
 @export_subgroup("Equips")
 
-#@export var backpack: Equip = null
-#@export var boots: Equip = null
-#@export var pouch: Equip = null
+@export var backpack: Equip = null
+@export var boots: Equip = null
+@export var pouch: Equip = null
 @export var map: bool = false
 @export var lantern: bool = false
+
+#- Functions

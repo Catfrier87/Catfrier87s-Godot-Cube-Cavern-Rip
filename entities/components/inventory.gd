@@ -1,15 +1,24 @@
 extends Node
 class_name Inventory
 
-@export var max_slots: int = 8
+var default = preload("res://items/weapons/fists.tres")
+
+@export var max_slots: int = 3 : set = _set_max_slots
 @export var slot: Dictionary = {
-	1: load("res://items/weapons/fists.tres"), #Melee.new(), #Fucckkk
+	1: default, #Melee.new(), #Fucckkk
+	2: default,
+	3: default,
 } # Supposed to be accessed like Inventory.Slot[1]
 
-var default = preload("res://items/weapons/fists.tres")
+#- Gets
+
+func _set_max_slots(value):
+	updated_slot_amounts.emit(value, max_slots) # watch out for execution order errors from emitting before changing value
+	max_slots = value
 
 #- Signals
 
+signal updated_slot_amounts
 signal updated_slot
 
 #- Functions

@@ -16,3 +16,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
 [editable path="Player"]
 [editable path="Player/Body/PlayerCamera"]
+[editable path="Player/Body/PlayerCamera/UIMain"]
