@@ -16,8 +16,6 @@ func deselect():
 func display_item(item: Item):
 	
 	$ItemName.text = item.item_name
-	print(item.item_name)
-	print('"'+item.image+'"')
 	if item.image == "":
 		$ItemImage.texture = null
 	else:

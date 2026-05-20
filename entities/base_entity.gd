@@ -1,20 +1,27 @@
 extends Node
 class_name Entity
 
+@export var body: Node3D
+
 #--- Health
 
-@export var health: float = 1
-@export var max_health: float = 1
+@export var max_health: float = 10
+@export var health: float = 10 : set = _set_health
+# Note: I am not using setters because they are less versatile (no damagetype support) and will get tripped by Exported Variables.
 
-func mod_health(amount: float) -> float:
-	var result = clamp(health + amount, 0, max_health)
-	var diff = result - health
-	health = result
+signal health_changed
+
+func _set_health(value):
+	var old = health
+	health = value
+	health_changed.emit(health, old)
+
+func mod_health(amount):
+	var new_value = clamp(health + amount, 0, max_health)
+	var old_value = health
 	
-	if health <= 0:
-		pass
-	
-	return diff
+	health = new_value
+	health_changed.emit(new_value, old_value)
 
 #--- Modifiers
 

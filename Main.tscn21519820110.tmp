@@ -19,18 +19,16 @@ script = ExtResource("1_glv2v")
 [node name="Body" parent="Player" index="1" unique_id=1624144700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
-[node name="Entity" type="Node" parent="." unique_id=627792323 node_paths=PackedStringArray("body")]
+[node name="Entity" type="Node" parent="." unique_id=627792323]
 script = ExtResource("4_cm0pq")
-body = NodePath("Body")
-max_health = 40.0
-health = 40.0
+health = 20.0
+max_health = 20.0
 metadata/_custom_type_script = "uid://dvw53tiejha47"
 
 [node name="Body" type="StaticBody3D" parent="Entity" unique_id=1012128789]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 8, -2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Entity/Body" unique_id=585646864]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5023136, 0)
 shape = SubResource("BoxShape3D_cm0pq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Entity/Body" unique_id=867697694]

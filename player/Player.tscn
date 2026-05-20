@@ -4,15 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://dx76n0347uda4" path="res://player/PlayerCamera.tscn" id="2_3c3w1"]
 [ext_resource type="Script" uid="uid://bujs25wn1g2au" path="res://entities/components/inventory.gd" id="2_83hs8"]
 [ext_resource type="Script" uid="uid://qh2irvsl5ji7" path="res://player/scripts/character_controller.gd" id="2_wnvi2"]
+[ext_resource type="Script" uid="uid://dcbwjp1iot3ym" path="res://player/scripts/minor scripts/item_ray.gd" id="5_x8kxw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
 height = 3.1
 
-[node name="Player" type="Node" unique_id=2049562292 node_paths=PackedStringArray("camera", "controller", "inventory")]
+[node name="Player" type="Node" unique_id=2049562292 node_paths=PackedStringArray("camera", "inventory", "body")]
 script = ExtResource("1_83hs8")
 camera = NodePath("Body/PlayerCamera")
-controller = NodePath("Body")
 inventory = NodePath("Inventory")
+body = NodePath("Body")
 metadata/_custom_type_script = "uid://dsjq6kps2s7a1"
 
 [node name="Inventory" type="Node" parent="." unique_id=2142107890]
@@ -35,6 +36,9 @@ target_position = Vector3(0, 0, -3)
 
 [node name="Hotbar" parent="Body/PlayerCamera/UIMain" parent_id_path=PackedInt32Array(700266717, 1197083834) index="4" unique_id=625449946 node_paths=PackedStringArray("linked_inventory")]
 linked_inventory = NodePath("../../../../Inventory")
+
+[node name="ItemRay" type="RayCast3D" parent="Body/PlayerCamera" unique_id=1135974836]
+script = ExtResource("5_x8kxw")
 
 [editable path="Body/PlayerCamera"]
 [editable path="Body/PlayerCamera/UIMain"]

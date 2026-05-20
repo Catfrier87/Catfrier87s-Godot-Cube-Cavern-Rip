@@ -6,7 +6,6 @@ extends RayCast3D
 var target: Node = null
 
 func _process(_delta: float):
-	#print(get_collider() == null)
 	target = get_collider()
 	
 	hover_text.visible = false
