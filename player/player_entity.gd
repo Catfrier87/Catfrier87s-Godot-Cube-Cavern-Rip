@@ -6,14 +6,32 @@ class_name Player
 @export_group("Inventory")
 
 @export var inventory: Inventory
-@export var selected_slot: int = 1: set = _set_selected_slot
+@export var held_slot: int = 1: set = _set_selected_slot
 
 signal changed_slot
 
 func _set_selected_slot(value):
-	var _last_slot = selected_slot
-	selected_slot = value % inventory.max_slots
-	changed_slot.emit(selected_slot, _last_slot)
+	var _last_slot = held_slot
+	#selected_slot = value % inventory.max_slots-1
+	
+	held_slot = value
+	
+	if held_slot > inventory.max_slots:
+		held_slot = held_slot % inventory.max_slots
+	elif held_slot < 1:
+		held_slot = inventory.max_slots - (held_slot & inventory.max_slots)
+	
+	print(held_slot)
+	
+	"""
+	print("-----------")
+	print("start: ",value)
+	selected_slot = value % (inventory.max_slots + 1)
+	print("mod:   ",selected_slot)
+	if clamp(selected_slot, 1, inventory.max_slots) != selected_slot:
+		print("Number out of range")
+	"""
+	changed_slot.emit(held_slot, _last_slot)
 
 @export_subgroup("Consumables")
 

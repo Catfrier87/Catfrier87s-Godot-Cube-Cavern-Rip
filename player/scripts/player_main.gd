@@ -12,13 +12,13 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("next_slot"):
-		selected_slot += 1
+		held_slot += 1
 	if Input.is_action_just_released("previous_slot"):
-		selected_slot -= 1
+		held_slot -= 1
 	
 	if event.is_action_pressed("item_primary"):
-		if inventory.slot[selected_slot].has_method("use_primary"):
-			inventory.slot[selected_slot].use_primary(self)
+		if inventory.slot[held_slot].has_method("use_primary"):
+			inventory.slot[held_slot].use_primary(self)
 	elif event.is_action_pressed("item_secondary"):
-		if inventory.slot[selected_slot].has_method("use_secondary"):
-			inventory.slot[selected_slot].use_secondary(self)
+		if inventory.slot[held_slot].has_method("use_secondary"):
+			inventory.slot[held_slot].use_secondary(self)
